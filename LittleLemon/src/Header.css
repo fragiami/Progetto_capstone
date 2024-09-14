@@ -1,0 +1,132 @@
+.header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    margin-right: 20px;
+}
+
+.nav-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: inherit;
+}
+
+/* Stile per il burger menu */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.burger-bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Stile per l'overlay del menu a comparsa */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #495E57; /* Sfondo della hero section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Rende il menu non cliccabile quando è nascosto */
+    z-index: 1000; /* Assicurati che sia sopra altri contenuti */
+}
+
+.overlay-menu.open {
+    opacity: 1;
+    transform: scale(1); /* Espande il menu */
+    pointer-events: auto; /* Rende il menu cliccabile */
+}
+
+.overlay-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.overlay-menu-item {
+    margin: 0;
+    padding: 0;
+}
+
+.overlay-menu-link {
+    text-decoration: none;
+    color: #fff; /* Colore del testo bianco */
+    font-size: 1.5rem; /* Dimensione del testo maggiore */
+    font-weight: bold; /* Testo in grassetto */
+}
+
+/* Media query per schermi piccoli */
+@media (max-width: 768px) {
+    .nav-desktop {
+        display: none; /* Nascondi il menu desktop */
+    }
+
+    .burger-menu {
+        display: flex; /* Mostra il burger menu */
+    }
+}

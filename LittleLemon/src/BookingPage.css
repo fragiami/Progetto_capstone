@@ -1,0 +1,94 @@
+body {
+    font-family: 'Karla', sans-serif; /* Imposta Karla come font predefinito per tutto il contenuto */
+    margin: 0; /* Rimuove il margine di default del body */
+    padding: 0; /* Rimuove il padding di default del body */
+    overflow-x: hidden; /* Evita l'overflow orizzontale */
+}
+
+.booking-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 100vw; /* Evita di superare la larghezza dello schermo */
+    margin: 0 auto;
+    box-sizing: border-box; /* Include padding e bordo nella larghezza */
+}
+
+.hero-section {
+    width: 100vw; /* Assicura che sia a larghezza piena */
+    background-color: #495E57;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0; /* Rimuove margini */
+    padding: 0; /* Rimuove padding */
+    box-sizing: border-box; /* Assicura che padding e bordo siano inclusi */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); /* Centra la hero section */
+}
+
+    .hero-section h1 {
+        font-family: 'Markazi Text', serif;
+        color: white;
+        font-size: 64pt;
+        margin: 0;
+    }
+
+.booking-header {
+    grid-area: header;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.booking-form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Limita la larghezza massima del form per evitare spaziature irregolari */
+    margin: 0 auto; /* Centro il form orizzontalmente */
+    text-align: center;
+    box-sizing: border-box; /* Include padding e bordo nella larghezza */
+    padding: 0 20px; /* Aggiungi padding laterale per spazio uniforme */
+}
+
+@media (min-width: 1024px) {
+    .booking-container {
+        grid-template-columns: 1fr; /* Cambia a una sola colonna sui desktop */
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "header"
+            "form";
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "header"
+            "form";
+    }
+}
+
+@media (max-width: 767px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "header"
+            "form";
+    }
+
+    .booking-header {
+        font-size: 1.5rem;
+    }
+}
